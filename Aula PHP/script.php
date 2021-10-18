@@ -1,4 +1,7 @@
 <?php
+
+    session_start();
+
     $categorias = [];
     $categorias[] = 'infantil';
     $categorias[] = 'adolecentes';
@@ -11,7 +14,9 @@
 
     if(empty($name)) 
 {
-    echo'O nome não pode ser vazio';
+    // echo'O nome não pode ser vazio';
+    $_SESSION['mensagem de erro'] = 'O nome não pode ser vazio, preencha novamente';
+    // header(string:'location: Indexphaula2.php');
     return;
 }
 
